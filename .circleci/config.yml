@@ -4,6 +4,8 @@
 version: 2.1
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: CC_TEST_ID
     working_directory: ~/barbershop
     docker:
       # specify the version you desire here
@@ -16,10 +18,27 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          command: npm install
+          command: |
+            npm install nyc
+            npm install
       - save_cache: # special step to save the dependency cache
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
-      - run: # run tests
-          command: npm test
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+          # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+      - run:
+          name: Run tests
+          command: |
+          # sudo docker-php-ext-enable xdebug
+          # notify Code Climate of a pending test report using `before-build`
+            ./cc-test-reporter before-build
+            npm test
+            './node_modules/.bin/nyc report --reporter=text-lcov'
+          # sudo vendor/bin/phpunit --coverage-clover clover.xml
+          # upload test report to Code Climate using `after-build`
+            ./cc-test-reporter after-build --exit-code 
