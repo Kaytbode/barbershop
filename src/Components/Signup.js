@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Mutation, ApolloProvider } from '@apollo/react-components';
-import client from './Apollo';
-import CREATE_BARBER from './Mutations/AddUser';
+import client from '../Apollo';
+import CREATE_BARBER from '../Mutations/AddUser';
 
 class Signup extends Component {
   constructor(props) {
@@ -9,10 +9,12 @@ class Signup extends Component {
   }
 
   render() {
+    let n;
     return (
       <ApolloProvider client={client}>
         <Mutation mutation={CREATE_BARBER}>
-          {(createBarber, {data})=> (
+          {(createBarber, {loading, error})=> (
+            <div>
             <form
               onSubmit={e => {
                 const { target } = e;
@@ -52,6 +54,11 @@ class Signup extends Component {
               </label>
               <input type="submit" value="Submit" />
             </form>
+            {loading && <p>Loading...</p>}
+            {
+              n = error? <p>error...</p> : <p> </p>
+            }
+            </div>
           )}
         </Mutation>
       </ApolloProvider>

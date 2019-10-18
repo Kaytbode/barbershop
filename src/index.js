@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Signup from './Signup';
+import './Stylesheets/index.css';
+import Signup from './Components/Signup';
 
 import * as serviceWorker from './serviceWorker';
 
