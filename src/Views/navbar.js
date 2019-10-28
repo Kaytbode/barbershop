@@ -4,7 +4,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-boots
 
 function NavViewer(){
   return (
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" fixed="top" expand="lg">
         <Navbar.Brand href="#home">Barber Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -3,7 +3,8 @@ import { Form, Col, Button } from 'react-bootstrap';
 
 function SignUpViewer() {
 	return (
-		<div>
+		<div className="Reg-form">
+			<p className="Reg-para">Registeration Form</p>
 			<Form.Group as={Col} controlId="formGridEmail">
 				<Form.Label>Email</Form.Label>
 				<Form.Control type="email" name="email" placeholder="Enter email" />
@@ -29,7 +30,7 @@ function SignUpViewer() {
 				<Form.Control type="password" name="confirmPassword" placeholder="Password" />
 			</Form.Group>
 
-			<Button variant="primary" type="submit">
+			<Button variant="primary" type="submit" className="Reg-button">
 				Sign Up
 			</Button>
 		</div>

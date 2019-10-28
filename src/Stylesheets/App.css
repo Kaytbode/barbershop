@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+
+body {
+  margin-top: 100px;
+  background-color: #eee;
+}
+
+.Reg-form {
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 10px 10px 50px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 12px 12px 2px 1px rgba(184, 184, 192, 0.2);
+}
+
+.Reg-para {
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.Reg-button {
+  width: 70%;
+  border-radius: 25px;
+}
