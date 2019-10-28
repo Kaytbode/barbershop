@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import client from './Apollo';
+import { ApolloProvider } from '@apollo/react-hooks';
 import './Stylesheets/index.css';
-import Signup from './Components/Signup';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './Components/App';
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  
-    <Signup />,
-
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
