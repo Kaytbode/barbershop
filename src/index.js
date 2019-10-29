@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import client from './Apollo';
-import { ApolloProvider } from '@apollo/react-hooks';
+import { ApolloProvider } from '@apollo/react-components';
 import './Stylesheets/index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './Components/App';
