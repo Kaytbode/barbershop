@@ -15,7 +15,7 @@ function NavViewer(){
   return (
     <Router>
       <Navbar bg="light" fixed="top" expand="lg">
-        <Navbar.Brand href="#home">Barber Shop</Navbar.Brand>
+        <Navbar.Brand>Barber Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

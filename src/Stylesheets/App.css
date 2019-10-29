@@ -35,9 +35,10 @@ body {
 
 .Nav-link {
   display: block;
-  padding: 1rem 1rem 1rem 0rem;
+  padding: 1rem 1rem 1rem 2rem;
   color: rgba(0,0,0,.5);
   background-color: transparent;
+  font-size: 1.1em;
 }
 
 .Nav-link:hover {
