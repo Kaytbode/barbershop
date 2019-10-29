@@ -18,7 +18,14 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #030116;
+  cursor: pointer;
+  font-style: oblique;
+}
+
+.App-link:hover {
+  text-decoration: none;
+  color: brown;
 }
 
 body {
@@ -26,13 +33,36 @@ body {
   background-color: #eee;
 }
 
-.Reg-form {
+.Nav-link {
+  display: block;
+  padding: 1rem 1rem 1rem 0rem;
+  color: rgba(0,0,0,.5);
+  background-color: transparent;
+}
+
+.Nav-link:hover {
+  text-decoration: none;
+  color: brown;
+}
+
+.Reg-form, 
+.Log-link {
   margin: 50px auto;
   max-width: 500px;
   padding: 10px 10px 50px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 12px 12px 2px 1px rgba(184, 184, 192, 0.2);
+}
+
+.Log-link {
+  height: 5vmin;
+  padding-top: 20px;
+  border-radius: 0px;
+  background-color: #dfe7ee;
+  box-shadow: 12px 2px 2px 1px rgba(206, 206, 211, 0.2);
+  font-size: 1.2em;
+  letter-spacing: 2px;
 }
 
 .Reg-para {
