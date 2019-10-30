@@ -1,7 +1,7 @@
 import { gql }  from 'apollo-boost';
 
 const VERIFY_BARBER = gql`
-  mutation CreateBarber($input: VerifyBarberMutationInput!) {
+  mutation VerifyBarber($input: VerifyBarberMutationInput!) {
     verifyBarber(input: $input) {
       clientMutationId
     }

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Mutation } from '@apollo/react-components';
 import CREATE_BARBER from '../Mutations/AddUser';
 import SignUpViewer from '../Views/signup';
+import DashBoardViewer from '../Views/dashboard';
 
 class Signup extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      firstName : ''
+      email: ''
     };
   }
 
@@ -30,14 +31,14 @@ class Signup extends Component {
               createBarber({ variables: { input } });
 
               this.setState({
-                firstName: input.firstName
+                email: input.email
               });
 
               e.preventDefault();
            }}
           >
             
-            {data? this.state.firstName : <SignUpViewer />}
+            {data? <DashBoardViewer email = {this.state.email} /> : <SignUpViewer />}
 
           </form>
         )}
