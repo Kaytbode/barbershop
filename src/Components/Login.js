@@ -4,6 +4,12 @@ import VERIFY_BARBER from '../Mutations/VerifyUser';
 import LogInViewer from '../Views/login';
 import GET_BARBERS from '../Queries/GetUser';
 import DashBoardViewer from '../Views/dashboard';
+import {
+  Redirect,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 class Login extends Component {
   constructor(props){
@@ -15,6 +21,7 @@ class Login extends Component {
   }
 
   render(){
+    const { email } = this.state;
     return (
         <Mutation mutation={VERIFY_BARBER}>
           {
@@ -29,11 +36,22 @@ class Login extends Component {
 
                   verifyBarber({ variables: { input } });
 
+                  this.setState({email: input.email});
+
                   e.preventDefault();
                 }}
               >
-                { !data && <LogInViewer />}
-                { data && <DashBoardViewer />}
+                <LogInViewer />
+                { data? 
+                 <Redirect
+                  to={{
+                    pathname: "/users",
+                    state: { email: email }
+                  }}
+                /> 
+                 : null 
+                 }
+    
               </form>
           )
         }

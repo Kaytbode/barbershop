@@ -8,6 +8,7 @@ import {
 import { Navbar, Nav } from 'react-bootstrap';
 import Signup from '../Components/Signup';
 import Login from '../Components/Login';
+import DashBoardViewer from '../Views/dashboard';
 
 
 
@@ -30,6 +31,9 @@ function NavViewer(){
         </Route>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/users">
+          <DashBoardViewer />
         </Route>
       </Switch>
     </Router>
