@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import CreateService from '../Components/Createservice';
+import CurrentService from '../Components/Currentservice';
 import Login from '../Components/Login';
 
 
@@ -28,10 +29,10 @@ function DashBoardViewer (props){
         </Navbar>
         <Switch>
           <Route exact path="/users/new">
-            <CreateService />
+            <CreateService email= { email } />
           </Route>
           <Route exact path="/users/current">
-            <CreateService />
+            <CurrentService />
           </Route>
           <Route path="/users/history">
             <Login />

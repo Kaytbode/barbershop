@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-import { Mutation, Query } from '@apollo/react-components';
+import { Mutation } from '@apollo/react-components';
 import VERIFY_BARBER from '../Mutations/VerifyUser';
 import LogInViewer from '../Views/login';
-import GET_BARBERS from '../Queries/GetUser';
-import DashBoardViewer from '../Views/dashboard';
-import {
-  Redirect,
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Login extends Component {
   constructor(props){
